@@ -1,0 +1,46 @@
+<div class="admin-box">
+	<div class="admin-aside">
+		<ul class="admin-menu">
+			<li><a class="current" href="#nav/addProduct" data-nav="addProduct">add1</a></li>
+			<li><a href="#nav/editProduct" data-nav="editProduct">add1</a></li>
+			<li><a href="#nav/addNews" data-nav="addNews">add1</a></li>
+			<li><a href="#nav/editNews" data-nav="editNews">add1</a></li>
+			<li><a href="#nav/addBanner" data-nav="addBanner">add1</a></li>
+			<li><a href="#nav/editBanner" data-nav="editBanner">add1</a></li>
+			<li><a href="#nav/addTag" data-nav="addTag">add1</a></li>
+			<li><a href="#nav/editTag" data-nav="editTag">add1</a></li>
+		</ul>
+	</div>
+	<div class="admin-body">
+		<div class="admin-main">
+			<h1 id="title"></h1>
+			<div class="admin-body-item" data-nav="addProduct">
+				<div id="addProduct"></div>
+			</div>
+			<div class="admin-body-item" data-nav="editProduct">
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>Content</td>
+							<td>Time</td>
+							<td>Edit</td>
+						</tr>
+					</thead>
+					<tbody id="editProduct"></tbody>
+				</table>
+			</div>
+			<div class="admin-body-item" data-nav="addNews">
+				<div id="addNews"></div>
+			</div>
+			<div class="admin-body-item" data-nav="editNews">editNews</div>
+			<div class="admin-body-item" data-nav="addBanner">addBanner</div>
+			<div class="admin-body-item" data-nav="editBanner">editBanner</div>
+			<div class="admin-body-item" data-nav="addTag">addTag</div>
+			<div class="admin-body-item" data-nav="editTag">editTag</div>
+		</div>
+		
+	</div>
+</div>
+<%include ../_script%>
+<script src="/js/admin/index.js"></script>

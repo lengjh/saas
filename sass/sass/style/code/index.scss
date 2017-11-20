@@ -1,0 +1,66 @@
+@import 'compass/css3';
+
+html, body {
+	min-height: 500px;
+	overflow: hidden;
+}
+
+.code-box {
+	@include flexbox((display: box, box-orient:vertical));
+	min-height: 100vh;
+	height: 100%;
+
+	>div {
+		min-height: 50%;
+
+		&:nth-child(1) {
+			@include flexbox((display: flex));
+			background-color: #333;
+
+			> div {
+				width: 33.33%;
+				border: 10px solid #454545;
+				overflow: auto;
+				word-wrap: break-word;
+				@include flexbox((display: box, box-orient:vertical));
+
+				> div:nth-child(1) {
+					padding: 10px;
+					color: #fff;
+				}
+
+				> div:nth-child(2) {
+					@include flexbox((box-flex: 1), $version:1);
+				}
+
+				textarea {
+					width: 100%;
+					height: 100%;
+					border: none;
+					padding: 0;
+					resize: none;
+					display: block;
+				}
+
+			}
+
+		}
+
+		&:nth-child(2) {
+			background-color: #fff;
+			display: grid;
+
+			>div {
+				height: 100%;
+			}
+
+			iframe {
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+
+	}
+
+}

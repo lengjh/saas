@@ -1,0 +1,12 @@
+@import '../global';
+
+html {
+	background-color: #f2f2f2;
+}
+.logo {
+	background-color: #fff;
+	width: 220px;
+	padding: rem(10);
+	margin: rem(100) auto;
+	box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5), -5px -5px 0px rgba(0, 0, 0, 0.5);
+}

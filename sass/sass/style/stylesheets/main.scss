@@ -1,0 +1,28 @@
+@import '../global';
+@import '../mixin';
+
+body > div {
+	font-size: rem(14);
+}
+.test {
+	@include transition(width 0.25s linear);
+}
+.page {
+	height: 100%;
+	@include flexbox((display: box, box-orient:vertical), $version:1);
+
+	.header {
+		height: rem(150);
+		line-height: rem(150);
+		font-size: rem(50);
+		background-color: #F15A45;
+		color: #fff;
+	}
+	.body {
+		@include flexbox((box-flex: 1), $version:1);
+	}
+	.footer {
+		background-color: #357;
+		height: rem(150);
+	}
+}

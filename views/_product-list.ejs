@@ -1,0 +1,7 @@
+<%data.forEach(function(item){%>
+<div class="">
+	<img src="<%=item.imageUrl%>" alt=""/>
+	<%=item.title||item.name%>
+	<%-item.content%>
+</div>
+<%})%>

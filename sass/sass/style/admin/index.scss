@@ -1,0 +1,259 @@
+@import '../global';
+@import '../table';
+@import 'other';
+
+html, body {
+	height: 100%;
+}
+
+body {
+	* {
+		font-size: rem(14);
+	}
+
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.none {
+	display: none;
+}
+
+#app {
+	.emp-table {
+		width: 100%;
+		text-align: center;
+	}
+
+	table {
+		border: none;
+		table-layout: fixed;
+	}
+
+	.emp-table tr {
+		height: 30px;
+	}
+
+	.emp-table td .edit {
+		display: none;
+	}
+
+	.emp-table td.editing .edit {
+		display: block;
+	}
+
+	.emp-table td.editing .display {
+		display: none;
+	}
+
+	td, th {
+		input {
+			width: 80%;
+		}
+
+	}
+
+	input.username {
+	}
+
+	input.age {
+		width: 30px;
+	}
+
+	select.sex {
+		width: 45px;
+	}
+
+	input, select {
+		text-align: center;
+		border: 1px solid #ccc;
+		outline: none;
+		padding: 5px;
+	}
+
+}
+
+.nav {
+	.active {
+		color: #f00;
+	}
+
+}
+
+.admin-layout {
+	@include flexbox((display: box), $version:1);
+	height: 100%;
+
+	.admin-layout-menu {
+		width: rem(220);
+		background-color: #454545;
+		box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.2) inset;
+	}
+
+	.admin-layout-content {
+		@include flexbox((box-flex: 1), $version:1);
+		overflow: auto;
+
+		.admin-layout-header {
+			height: rem(54);
+			line-height: rem(54);
+			padding: 0 rem(20);
+			background-color: #fafafa;
+			border-bottom: 1px solid #eee;
+		}
+
+		.admin-layout-body {
+			padding: rem(20);
+		}
+
+	}
+
+}
+
+.menu {
+	li {
+	}
+
+	a {
+		color: #fff;
+		display: block;
+		padding: rem(10);
+	}
+
+	.active {
+		a {
+			color: #454545;
+			background-color: #fafafa;
+		}
+
+	}
+
+}
+
+.nav {
+	@extend .clearfix;
+	padding-top: rem(10);
+
+	li {
+		@extend .fl;
+		padding: rem(10) rem(20);
+		line-height: 1;
+
+		&.active {
+			background-color: #369;
+			color: #fff;
+			border-radius: rem(5);
+
+			a {
+				color: #fff;
+			}
+
+		}
+
+	}
+
+}
+
+.logo {
+	height: rem(54);
+	line-height: rem(54);
+	text-align: center;
+	font-size: rem(30);
+	color: #fff;
+	background-color: #333;
+}
+
+.app-body {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+.form-input {
+	border: 1px solid #ccc;
+	padding: 0 10px;
+	height: 30px;
+	width: 300px;
+}
+
+.form-item {
+	margin: 10px 0;
+}
+
+.add-product-form-box {
+	input {
+		@extend .form-input;
+	}
+
+}
+
+html, body {
+	height: 100%;
+}
+
+.admin-box {
+	$width: 150px;
+
+	&, .admin-aside, .admin-body {
+		height: 100%;
+	}
+
+	.admin-aside, .admin-body {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.admin-aside {
+		width: $width;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: #273142;
+
+		&, a {
+			color: #fff;
+		}
+
+	}
+
+	.admin-body {
+		margin-left: $width;
+	}
+
+	.admin-main {
+		padding: 20px;
+	}
+
+}
+
+.admin-menu {
+	a {
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 20px;
+		border-top: 1px solid #1c2c48;
+		border-bottom: 1px solid #324059;
+
+		&.active {
+			color: #324059;
+			background-color: #fff;
+		}
+
+	}
+
+}
+
+.admin-body-item {
+	display: none;
+
+	img {
+		height: 200px;
+	}
+
+}

@@ -1,0 +1,51 @@
+﻿ @charset "utf-8";
+/**
+  功能：根据不同的屏幕宽度生成html的font-size配合rem来做适配 
+ */
+
+//适配基准数
+$base-fonts-default: 100px; 
+$max-container: 750px;
+$responsives:320px,360px, 375px, 384px, 393px,414px, 480px,540, 640px,720px,750px;  // 屏幕断点
+/* 媒体查询 */
+@mixin fz($values){
+    font-size: $values * $base-fonts-default / $max-container !important;
+}
+
+@each $responsive in $responsives {
+  @media only screen and (min-width: #{$responsive}) {
+    html{ @include fz($responsive);}
+    body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;}
+  }
+ /* @if $responsive==320px {
+       /!* @media only screen and (min-width: #{$responsive}) {
+            html { font-size:50px !important;}
+
+            body { font-size: 12px !important;}
+
+        }*!/
+  }@else {
+    @media only screen and (min-width: #{$responsive}) {
+        html{ @include fz($responsive);}
+        body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;}
+    }
+  }*/
+}
+@function pxToRem($values){
+ @return #{$values / 100}rem;
+}
+
+@function rem($values){
+ @return #{$values / 100}rem;
+}
+
+
+// html{
+//   font-size: 62.5px !important;
+// }
+
+// @function pxToRem($values,$xs:1){
+// 	@return #{$values / 120}rem;
+// }
+
+

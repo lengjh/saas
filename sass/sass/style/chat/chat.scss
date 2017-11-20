@@ -1,0 +1,163 @@
+@import '../global';
+$borderColor: #f2f2f2;
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+	background-color: #dce8d7;
+}
+.chat-page {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	font-size: rem(14);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+.chat-layout {
+	height: 100%;
+	background-color: #333;
+	@include flexbox((display: box, box-orient:vertical), $version:1);
+
+	.chat-layout-header {
+		padding: rem(15);
+		font-size: rem(14);
+		color: #fff;
+	}
+	.chat-layout-body {
+		position: relative;
+		@include flexbox((box-flex: 1), $version:1);
+	}
+}
+.layout-a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	@include flexbox((display: box), $version:1);
+
+	> div {
+		height: 100%;
+	}
+	.layout-left {
+		background-color: #fafafa;
+		@include flexbox((box-flex: 2), $version:1);
+	}
+	.layout-right {
+		width: rem(200);
+		color: #fff;
+		background-color: #eee;
+	}
+}
+.chat-box {
+}
+.chat-content {
+	margin: rem(10);
+}
+.chat-container {
+	height: 100%;
+	@include flexbox((display: box, box-orient:vertical), $version:1);
+
+	.chat-header {
+		height: rem(50);
+		line-height: rem(50);
+		background-color: #f8f8f8;
+		border-bottom: 1px solid nth($borderColor, 1);
+	}
+	.chat-body {
+		@include flexbox((box-flex: 1), $version:1);
+		overflow: auto;
+	}
+	.chat-button {
+		@include flexbox((display: box), $version:1);
+		border-top: 1px solid nth($borderColor, 1);
+
+		button, input, textarea {
+			height: rem(40);
+			padding: rem(10);
+			margin: 0;
+			outline: none;
+			border: none;
+			resize: none;
+		}
+		button {
+			width: rem(100);
+			display: block;
+			cursor: pointer;
+			background-color: #333;
+			color: #fff;
+		}
+		textarea, input {
+			display: block;
+			@include flexbox((box-flex: 1), $version:1);
+		}
+	}
+}
+.num-user {
+	text-align: center;
+
+	span {
+		margin: 0 20px;
+	}
+	em {
+		color: green;
+	}
+	i {
+		color: red;
+		font-weight: bold;
+	}
+}
+.message-item {
+	margin: rem(20) 0;
+	@extend .clearfix;
+}
+.message-item-box {
+	margin-left: rem(70);
+}
+.message-body {
+	float: left;
+	max-width: 95%;
+	background-color: #62BF6E;
+	padding: rem(10) rem(20);
+	border-radius: rem(3);
+	color: #fff;
+	word-break: break-all;
+	line-height: rem(18);
+}
+.username {
+	color: #999;
+	margin-bottom: rem(10);
+}
+.user-img {
+	width: rem(50);
+	height: rem(50);
+	float: left;
+	background: #eee url(img/user.png) no-repeat center center;
+	border-radius: 50%;
+}
+.message-time {
+	color: #aaa;
+	margin-left: rem(10);
+}
+.log {
+	color: #aaa;
+	text-align: center;
+	margin: rem(10) 0;
+}
+.my-message {
+	.message-body {
+		float: right;
+		background-color: #7BC4EF;
+	}
+	.user-img {
+		float: right;
+	}
+	.username, .message-body {
+	}
+	.username {
+		text-align: right;
+	}
+	.message-item-box {
+		margin-right: rem(70);
+	}
+}
