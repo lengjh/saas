@@ -1,0 +1,37 @@
+.section-1 {
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.article-list {
+	@extend .clearfix;
+
+	.article-item {
+		padding: 20px;
+		margin-bottom: 20px;
+		@extend .section-1;
+	}
+
+	.article-header {
+		height: 200px;
+	}
+
+	.article-body {
+	}
+
+	.article-img {
+	}
+
+	.article-title {
+		font-size: 18px;
+	}
+
+	.article-des {
+	}
+
+	.article-date {
+		color: #999;
+		text-align: right;
+	}
+
+}

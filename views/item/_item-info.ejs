@@ -1,0 +1,10 @@
+<section class="item-gray">
+	<span>作者：</span>
+	<span class="author"><%=item.who%></span>
+	<span>更新时间：</span>
+	<time class="post-date" datetime="<%=item.createTime%>" title="<%=item.createTime%>">
+	<%=(new Date(item.createTime)).toLocaleDateString()%>
+	</time>
+	<span>阅读次数：</span>
+	<span class=""><%=item.read%></span>
+</section>

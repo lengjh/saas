@@ -4,6 +4,43 @@
 		<meta charset="UTF-8">
 		<title>Admin</title>
 		<link rel="stylesheet" href="/style/admin/index.css">
+		<link rel="stylesheet" href="/style/admin/global.css">
+		<style>
+			tfoot .form-input,tfoot  .form-textarea, tfoot .save-item{
+				display: none;
+			}
+			tfoot  .editing .form-input,tfoot  .editing .form-textarea{
+				display: inline-block;
+			}
+			tfoot  .editing .save-item{
+				display: inline-block;
+			}
+			tfoot  .editing .display{
+				display: none !important;
+			}
+			tfoot  .editing .edit-item {
+				display: none;
+			}
+			.table .ke-container{
+				width: 100% !important;
+			}
+			tfoot .webuploader-file ,tfoot .webuploader-file-list{
+				display: none;
+			}
+			tfoot .editing .webuploader-file ,tfoot .editing .webuploader-file-list{
+				display: block;
+			}
+			.tab-content{
+				display: none;
+			}
+			input.form-input{
+				width: 150px !important;
+				min-width: 150px !important;
+			}
+			.form-item{
+				margin: 10px;
+			}
+		</style>
 	</head>
 	<body>
 		<%-body%>

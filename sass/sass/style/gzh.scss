@@ -1,0 +1,28 @@
+@import 'variable';
+@import 'compass/reset';
+@import 'base';
+@import 'global';
+
+html, body {
+	background-color: #FFF;
+}
+
+.user-header {
+	background-color: #3EB94E;
+	color: #fff;
+	padding: rem(40);
+	font-size: rem(20);
+	text-align: center;
+
+	img {
+		width: rem(100);
+		height: rem(100);
+		border: 2px solid #ccc;
+		border-radius: 50%;
+	}
+	figcaption{
+		margin-top: rem(20);
+		font-size: rem(40);
+	}
+
+}

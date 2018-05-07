@@ -1,19 +1,41 @@
-﻿@import 'compass/reset';
+﻿@import 'variable';
+//@import 'compass/reset';
 @import 'compass/css3';
 @import 'mixin';
-@import 'base';
-//@import 'width';
-//@import 'margin-padding';
+@import 'form';
+//@import 'base';
+@import 'mixin';
+@import 'width';
+@import 'table';
+@import 'margin-padding';
+
+html {
+	width: 100%;
+}
 
 html, body {
-	width: 100%;
 	height: 100%;
+	background-color: $pageBgColor;
+	color: $defaultFontColor;
 }
+
 body {
-	line-height: 1.2;
+	font: normal normal $defaultFontSize /1.2 $fontFamily;
 }
-* {
-	box-sizing: border-box;
+
+a {
+	text-decoration: none;
+	color: $defaultFontColor;
+}
+
+img {
+	border: none;
+	vertical-align: top;
+	max-width: 100%;
+}
+
+.transition-all {
+	@include transition(all 0.25s linear);
 }
 
 /*
@@ -22,15 +44,18 @@ body {
 .clearfix {
 	@include clearfix;
 }
+
 .clear {
 	clear: both;
 	height: 0;
 	line-height: 0;
 	overflow: hidden;
 }
+
 .fl {
 	@include float(left);
 }
+
 .fr {
 	@include float(right);
 }
@@ -41,33 +66,43 @@ body {
 .text-left {
 	text-align: left;
 }
+
 .text-right {
 	text-align: right;
 }
+
 .text-center {
 	text-align: center;
 }
+
 .ell {
 	@include ell;
 }
+
 .of-x-hidden {
 	overflow-x: hidden;
 }
+
 .of-x-auto {
 	overflow-x: auto;
 }
+
 .of-y-hidden {
 	overflow-x: hidden;
 }
+
 .of-y-auto {
 	overflow-y: auto;
 }
+
 .no-resize {
 	resize: none;
 }
+
 .inline-block {
 	@include inlineBlock;
 }
+
 .user-select {
 	@include userSelect;
 }
@@ -78,15 +113,19 @@ body {
 .fz-px-12 {
 	font-size: 12px;
 }
+
 .fz-px-14 {
 	font-size: 14px;
 }
+
 .fz-px-16 {
 	font-size: 16px;
 }
+
 .fz-px-18 {
 	font-size: 18px;
 }
+
 .fz-px-20 {
 	font-size: 20px;
 }

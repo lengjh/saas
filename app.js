@@ -1,6 +1,8 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
+var loadRoutes = require('load-routes');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -10,7 +12,8 @@ var mongoose = require('mongoose');
 var Store = require('express-session').Store;
 
 var app = express();
-
+var config = require('./config');
+//webutils.log(config);
 
 /**
  * 连接数据库 Start ----------
@@ -18,17 +21,20 @@ var app = express();
 try {
 
   var MongooseStore = require('mongoose-express-session')(Store);
-  var db = mongoose.connect('mongodb://127.0.0.1/kingwell', {
+  var db = mongoose.connect(config.mongodb.url, {
     useMongoClient: true
   }, function(err) {
     if (err) {
       webutils.error(err);
     }
   });
+  db.on('open', function() {
+    webutils.success('数据库链接成功');
+  });
   db.on('error', function(err) {
-    //webutils.error(err);
     webutils.error('数据库链接失败');
   });
+
   app.use(require('express-session')({
     secret: 'kingwell.leng',
     resave: false,
@@ -42,7 +48,7 @@ try {
     })
   }));
 } catch (ev) {
-  webutils.error(ev);
+  webutils.error('数据库链接错误：' + ev);
 }
 /**
  * ---------- 连接数据库 End 
@@ -66,39 +72,40 @@ app.use(express.static(path.join(__dirname, 'public')));
 /** * 中间件使用 */
 app.use(require('./lib/middleware/res'));
 
-/** *Page页面 */
-var pageRoutes = {
-  index: require('./routes/index'),
-  product: require('./routes/pages/product'),
-  news: require('./routes/pages/news'),
-  contact: require('./routes/pages/contact'),
-  login: require('./routes/pages/login'),
-  register: require('./routes/pages/register'),
-  admin: require('./routes/pages/admin/index'),
-  //扩展
-};
 
-/** * 通用 */
-app.use('/', pageRoutes.index);
-app.use('/product', pageRoutes.product);
-app.use('/news', pageRoutes.news);
-app.use('/contact', pageRoutes.contact);
+function getFiles(p) {
+  var list = [];
 
-app.use('/admin', pageRoutes.admin);
+  function get(p) {
+    fs.readdirSync(p).forEach(function(item, index) {
+      var _p = path.join(p, item);
+      if (fs.statSync(_p).isFile()) {
+        list.push(_p);
+      } else if (fs.statSync(_p).isDirectory()) {
+        get(_p);
+      }
+    });
+  }
+  get(p);
+  return list;
+}
+// Auto Ddd Routes
+var adminReg = /^\/admin\/index/ig;
+var apiAdminReg = /^\/api\/admin\/index/ig;
+var indexReg = /^\/index/ig;
 
-/** * API接口 */
-var apiRoutes = {
-  template: require('./routes/api/template'),
-  file: require('./routes/api/file'),
-  news: require('./routes/api/admin/news'),
-  product: require('./routes/api/admin/product'),
+loadRoutes({
+  app: app,
+  //showLog: false,
+  path: path.join(__dirname, '/routes'),
+  callback: function(str) {
+    str = str.replace(adminReg, '/admin');
+    str = str.replace(apiAdminReg, '/api/admin');
+    str = str.replace(indexReg, '/');
+    return str;
+  }
+});
 
-  //扩展
-};
-app.use('/api/template', apiRoutes.template);
-app.use('/api/file', apiRoutes.file);
-app.use('/api/product', apiRoutes.product);
-app.use('/api/news', apiRoutes.news);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -106,6 +113,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+var spawn = require('child_process').spawn;
 
 // error handlers
 
@@ -115,6 +123,7 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
+      layout: false,
       message: err.message,
       error: err
     });

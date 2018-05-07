@@ -1,0 +1,25 @@
+{
+    "apps": [{
+        "name": "saas",
+        "cwd": "/home/saas/",
+        "script": "bin/www",
+        "exec_mode": "cluster",
+        "instances": "1",
+        "args": ["--enable-logs", "-n", "15", "--color"],
+        "log_date_format": "YYYY-MM-DD HH:mm Z",
+        "watch": false,
+        "merge_logs": true,
+        "autorestart": true,
+        "env": {
+            "NODE_ENV": "development",
+            "PORT": "3000",
+            //"REDIS_HOST": "192.168.10.61",
+            //"REDIS_PORT": "6379",
+            //"RABBITMQ_QUEUE": "Rpc_portal-pc-service-DEV",
+            //"PASSPORT_HOST": "http://passport.huize.com",
+            //"REDIS_SESSION_PREFIX": "nodejs_dev_sess:",
+            "LOG_LEVEL": "debug",
+            "IS_OPENNING_MQ_LOGGER": false
+        }
+    }]
+}

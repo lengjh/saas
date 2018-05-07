@@ -1,0 +1,28 @@
+<div class="login-section">
+	<form action="/api/user/login" method="get">
+		<fieldset>
+			<legend>
+				<h1><%=title%></h1>
+			</legend>
+			<figure>
+				<div class="user-default"></div>
+				<figcaption>
+				登录系统
+				</figcaption>
+			</figure>
+			<div class="form-label">用户名</div>
+			<input type="text" class="form-input m-t-5" name="userName" placeholder="请输入用户名">
+			<div class="form-label m-t-10">密码</div>
+			<input type="password" class="form-input m-t-5" name="password" placeholder="请输入密码">
+			<div class="form-label"></div>
+			<button class="form-buttom m-t-10" id="loginBtn">登录</button>
+			<div class="clearfix m-t-15">
+				<span>没有账号？</span><a href="/register">注册</a>
+			</div>
+		</fieldset>
+	</form>
+</div>
+<%include ../layout/_script.ejs%>
+<script>
+	require(['/js/user/login.js']);
+</script>

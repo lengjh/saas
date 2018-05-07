@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Admin</title>
+		<link rel="stylesheet" href="/style/admin/global.css">
+	</head>
+	<body class="body">
+		<!-- 整个页面Start -->
+		<div class="page-wrap">
+			<!-- Top Start -->
+			<div class="layout-page-top clearfix">
+				<div class="fl">
+					<div class="page-logo top-item js-admin-menu-item">
+						<a href="">
+							<img src="../img/admin-logo.png" alt="">
+						</a>
+					</div>
+					<div class="top-item">
+						<span class="top-item-span top-item-first page-title">控制台</span>
+					</div>
+					
+				</div>
+				<div class="fr">
+					<div class="top-item js-admin-menu-item top-item-line">
+						<span class="top-item-span">搜索</span>
+						<div class="drop-down-menu search-drop-down-menu">
+							<div class="drop-down-menu-body">
+								<label>
+									<strong></strong>
+									<input type="text" value="" placeholder="请输入关键字">
+									<span class="btn-1 m-l-10"><i class="fa fa-search" aria-hidden="true"></i>搜索</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="top-item js-admin-menu-item top-item-line">
+						<span class="top-item-span">消息中心<i class="message-tip">20</i></span>
+						<div class="drop-down-menu">
+							<div class="drop-down-menu-body">
+								<ul>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-commenting-o" aria-hidden="true"></i>财务系统<span class="red">(1)</span></a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-commenting-o" aria-hidden="true"></i>订单系统<span class="red">(2)</span></a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-commenting-o" aria-hidden="true"></i>客服系统<span class="red">(3)</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="top-item js-admin-menu-item top-item-line">
+						<span class="top-item-span">系统切换</span>
+						<div class="drop-down-menu">
+							<div class="drop-down-menu-body">
+								<ul>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-external-link" aria-hidden="true"></i>财务系统</a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-external-link" aria-hidden="true"></i>订单系统</a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-external-link" aria-hidden="true"></i>客服系统</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="top-item js-admin-menu-item top-item-line">
+						<span class="top-item-span">Admin</span>
+						<div class="drop-down-menu user-info">
+							<div class="drop-down-menu-body">
+								<div class="text-center">
+									<p><img src="//192.168.48.109:3001/assets/img/user-13.jpg" alt="" width="128" height="128"></p>
+									<p class="m-t-20"><strong>Admin</strong></p>
+								</div>
+								<ul class="m-t-20">
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-info-circle" aria-hidden="true"></i>我的资料</a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-list-alt" aria-hidden="true"></i>我的订单</a></li>
+									<li class="drop-down-menu-item"><a href="javascript:;"><i class="m-r-10 fa fa-user" aria-hidden="true"></i>我的账户</a></li>
+								</ul>
+								
+							</div>
+							<div class="drop-down-menu-footer">
+								<a href=""><i class="m-r-10 fa fa-sign-out" aria-hidden="true"></i>退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Top End -->
+			
+			<!-- Body Start -->
+			<div class="layout-page-body">
+				<div class="layout-page-body-main">
+					<div class="page-menu admin-menu page-menu-fixeds">
+						<div class="admin-menu-header">
+							<div class="menu-title" id="editMenu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+						</div>
+						
+						<div class="admin-menu-body" id="pageMenu"> </div>
+						<div class="admin-menu-footer"></div>
+						<div class="page-body">
+							<div class="menu-list" id=" "></div>
+						</div>
+						<div class="page-footer"></div>
+					</div>
+					<div class="sub-menu page-sub-menu-fixed" id="subMenu">
+						<dl>
+							<dt class="menu-sub-title"></dt>
+							<dd> </dd>
+						</dl>
+						<div class="icon"  title="点击显示隐藏" id="subMenuIcon"><div class="icon-bg"></div><span class="icon-tools-icon"></span></div>
+						<div class="menu-list" id="tabPageMenu"></div>
+					</div>
+					<div class="page-content">
+						<div class="page-content-header">
+							<div class="tab-list" id="tabPageNav">
+								<div class="admin-nav"><ul></ul></div>
+							</div>
+						</div>
+						<!-- 面包屑 Start -->
+						<!-- <div class="page-breadcrumb"> -->
+						<!-- 	<i class="fa fa-home" aria-hidden="true"></i> -->
+						<!-- 	<a href="">首页</a> -->
+						<!-- 	<i>&gt;</i> -->
+						<!-- 	<span>使用说明</span> -->
+						<!-- </div> -->
+						<!-- 面包屑 End -->
+						<div class="page-content-body">
+							<div class="page-content-main" id="tabPageIframe"></div>
+						</div>
+						<!-- 版本说明 Start -->
+						<div class="page-content-footer">
+							<div class="fl">Copyright ©2006- <script>var date = new Date(); document.write(date.getFullYear());</script>  版权所有</div>
+							<div class="fr">技术支持：<a target="_blank" href="//www.xxx.com">www.xxx.com</a></div>
+						</div>
+						<!-- 版本说明 End -->
+					</div>
+				</div>
+			</div>
+			<!-- Body End -->
+		</div>
+		<!-- 整个页面End -->
+		<script src="/js/libs/jquery/1.8.0/jquery.min.js"></script>
+		<!-- 弹出框Start -->
+		<link rel="stylesheet" href="/js/plugins/layer/3.0.3/skin/default/layer.css">
+		<script src="/js/plugins/layer/3.0.3/layer.js"></script>
+		
+		<!-- 弹出框End -->
+		<script src="/js/common/global.js?v1.0"></script>
+		<!-- <script src="../js/common/global.js?v1.0"></script> -->
+		<script src="/js/common/tab-page.js"></script>
+		<!-- <script src="../js/common/tab-page.js"></script> -->
+		<script src="/js/admin/js/index.js"></script>
+		<!--[if lt IE 10]>
+		<script src="//static.huizecdn.com/admin-ui/1.0.0/js/common/ie.js"></script>
+		<![endif]-->
+	</body>
+</html>

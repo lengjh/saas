@@ -1,15 +1,25 @@
 require([
 	'jquery',
-	'/js/common/kindEditor.js',
-	'/js/common/upload.js',
-	'/js/common/add-product.js',
-	'/js/product/app-view.js'
+	'webutils',
+	'/js/common/model/add-product.js',
+	'/js/common/view/kindEditor.js',
+	'/js/common/view/upload.js',
+	'/js/common/view/add-product.js',
+	'/js/product/app-view.js',
+	'/js/admin/banner/banner-app-view.js',
+	'/js/admin/tag/tag-app-view.js',
+	'/js/admin/news/news-app-view.js'
 ], function(
 	$,
+	webutils,
+	AppProductModel,
 	KindEditorView,
 	UploadView,
-	AddProduct,
-	ProductAppView
+	AddProductView,
+	ProductAppView,
+	BannerAppView,
+	TagAppView,
+	NewsAppView
 ) {
 
 
@@ -37,39 +47,39 @@ require([
 			_this.navStatus[nav] = true;
 			switch (nav) {
 				case 'addProduct':
-					var addProduct = new AddProduct({
+					var appProductModel = new AppProductModel();
+					appProductModel.set();
+					var addProduct = new AddProductView({
+						model: appProductModel,
 						postUrl: '/api/product/?dir=backbone'
 					});
 
 					$('#addProduct').append(addProduct.el);
-
 					break;
 				case 'editProduct':
 					new ProductAppView();
 					break;
 				case 'addNews':
-					var addNews = new AddProduct({
+					var addNews = new AddProductView({
 						postUrl: '/api/news/'
 					});
-
 					$('#addNews').append(addNews.el);
 					break;
 				case 'editNews':
+					new NewsAppView();
 					break;
 				case 'addBanner':
-					break;
-				case 'editBanner':
+					new BannerAppView();
 					break;
 				case 'addTag':
+					new TagAppView();
 					break;
 				case 'editTag':
 					break;
 			}
 
 		},
-		defaultRroute: function(a, b) {
-			console.log(a, b);
-		}
+		defaultRroute: function(a, b) {}
 	});
 
 	var appRouter = new AppRouter();

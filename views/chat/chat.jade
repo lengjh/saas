@@ -1,0 +1,52 @@
+extends ../layout
+block style
+	link(rel="stylesheet", href="/chat/chat.css")
+block content
+	#appChat(style="height:100%")
+		.chat-page
+			.chat-layout
+				.chat-layout-header
+					span=name|| id
+				.chat-layout-body
+					.layout-a
+						.layout-left
+							.chat-container
+								.chat-header
+									#numUser.num-user										
+										span#currentNum
+										span#allNum
+								.chat-body#chatBody
+									.chat-box
+										.chat-content
+											ul.pages
+												li.chat.page
+													.chatArea
+														ul.messages#messagesContent
+													
+												//- li.login.page
+												//- 	.form
+												//- 		h3.title What's your nickname?
+												//- 		input.usernameInput(type='text', maxlength='14')
+								.chat-button
+									//textarea.inputMessage(name="", cols="30", rows="10")
+									input.inputMessage(placeholder='Type here...')
+									button.send-message 发送
+						.layout-right 
+
+
+			
+
+	script
+		| 
+		|var roomId = '#{id}' ;
+		|var user = !{JSON.stringify(user||'{}')}|| '';
+		| 
+
+	include ../common/_script
+
+	//- script(src='/javascripts/libs/socket.io/socket.io.js')
+	//- script(src='/chat/chat.js')
+	include _tpl-list
+	script
+		| require(['chat']);
+

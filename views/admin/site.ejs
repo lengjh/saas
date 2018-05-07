@@ -1,0 +1,35 @@
+<div class="section-1 p-20">
+	<style>
+	input.form-input,textarea.form-textarea{
+		margin: 10px;
+		width: 500px !important;
+	}
+	</style>
+	<div class="form-box" id="siteInfo">
+		<div class="form-item"><input type="hidden" class="form-input m-t-5" name="id" readonly=""></div>
+		<!-- <div class="form-item">
+			<div class="form-label">标题</div>
+			<input type="text" class="form-input m-t-5" name="title">
+		</div> -->
+		<div class="form-item">
+			<div class="form-label">名称</div>
+			<input type="text" class="form-input m-t-5" name="name">
+		</div>
+		<div class="form-item">
+			<div class="form-label">keywords</div>
+			<textarea class="form-textarea" name="keywords"></textarea>
+		</div>
+		<div class="form-item">
+			<div class="form-label">description</div>
+			<textarea class="form-textarea" name="description"></textarea>
+		</div>
+		<div class="form-item" id="">
+			<div class="form-label">logo</div>
+			<div id="logoImageUrl" class="m-t-10"></div>
+		</div>
+		<div class="form-item"><button class="btn-1" id="siteInfoBtn">保存</button></div>
+	</div>
+	
+</div>
+<%include ../layout/_script%>
+<script src="/js/admin/js/site.js"></script>

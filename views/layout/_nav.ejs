@@ -1,0 +1,9 @@
+<nav>
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav">
+			<%(locals.navList||[]).forEach(function(item){%>
+			<li role="presentation" class="pull-left"><a href="<%=item.url%>"><%=item.text%></a></li>
+			<%});%>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,30 @@
+<div class="register-section">
+	<form action="/api/user/register" method="post">
+		<fieldset>
+			<legend>
+				<h1><%=title%></h1>
+			</legend>
+			<figure>
+				<div class="user-default"></div>
+				<figcaption>
+				注册账号
+				</figcaption>
+			</figure>
+		</fieldset>
+		<div class="form-label">用户名</div>
+		<input type="text" class="form-input m-t-5" name="userName">
+		<div class="form-label m-t-10">密码</div>
+		<input type="password" class="form-input m-t-5" name="password">
+		<div class="form-label m-t-10">授权码</div>
+		<input type="text" class="form-input m-t-5" name="code">
+		<div class="form-label m-t-10"></div>
+		<button class="form-buttom m-t-10" id="registerBtn">注册</button>
+		<div class="clearfix m-t-15">
+			<span>已经有账号？</span><a href="/login">登录</a>
+		</div>
+	</form>
+</div>
+<%include ../layout/_script.ejs%>
+<script>
+	require(['/js/user/register.js']);
+</script>

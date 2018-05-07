@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<%locals.site = locals.site||{}%>
+<html lang="en">
+	<head>
+		<%include _meta.ejs%>
+		<link rel="stylesheet" href="//static.huizecdn.com/js/plugins/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/style/main.css">
+		<%(locals.stylePath||[]).forEach(function(path){%>
+		<link rel="stylesheet" href="<%=path%>">
+		<%})%>
+		<!-- <link rel="stylesheet" href="//static.huizecdn.com/css/com/animate.min.css"> -->
+	</head>
+	<body>
+		
+		<%include _header%>
+		<!-- </div> -->
+		<div class="content-wrap">
+			<%-body%>
+		</div>
+		<%include _footer%>
+	</body>
+</html>

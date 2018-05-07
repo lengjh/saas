@@ -1,0 +1,24 @@
+<script src="//static.huizecdn.com/js/plugins/local-storage/local-storage.min.js"></script>
+<script>
+	//http://static.huizecdn.com/js/plugins/local-storage/local-storage.min.js
+	(function(window, undefined) {
+		var _performance = '';
+		try {
+			_performance = JSON.stringify(performance);
+		} catch (ev) {}
+		 
+ 		if(!storage.getCookie('__statistical')){
+ 			storage.setCookie('__statistical',true,0.1);
+ 		 
+ 			$.post('/api/statistical', {
+				location: location.href,
+				userAgent: navigator.userAgent,
+				performance: _performance
+			}, function(res) {
+				console.log(res);
+			});
+ 		}
+ 	 
+
+	})(this);
+</script>

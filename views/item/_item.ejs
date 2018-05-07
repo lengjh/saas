@@ -1,0 +1,24 @@
+<%items.forEach(function(item,index){%>
+<section class="content-wrap section-main p-30 <%=index===0 ? '' : 'block-margin-3'%>">
+	<article class="">
+		<header class="post-head">
+			<h3 class="post-title">
+			<a href="/item/<%=item._id%>"><%=item.name%></a>
+			</h3>
+			<%include _item-info.ejs%>
+		</header>
+		<section class="featured-media block-margin-1">
+			<img src="<%=item.imageUrl%>" alt="<%=item.name%>">
+		</section>
+		<section class="post-content">
+			<%=item.content%>
+			<footer class="post-footer clearfix">
+				<%include _tag.ejs%>
+			</footer>
+		</section>
+		<div class="post-permalink">
+			<a class="btn btn-default" href="/item/<%=item._id%>">阅读全文</a>
+		</div>
+	</article>
+</section>
+<%})%>

@@ -1,0 +1,41 @@
+
+<section class="content-wrap">
+	<div class="container">
+		<div class="row">
+			
+			<!-- < % include ../item/_item.ejs% > -->
+			<%items.forEach(function(item,index){%>
+			<main class="col-md-4 main-content">
+				<section class="content-wrap section-main p-30 block-margin-3">
+					<article class="">
+						<section class="featured-media">
+							<img class="img-responsive" src="<%=item.imageUrl%>" alt="<%=item.name%>">
+						</section>
+						<header class="post-head">
+							<h4 class="post-title">
+							<a href="/item/<%=item._id%>"><%=item.name%></a>
+							</h4>
+							<%include ../item/_item-info.ejs%>
+						</header>
+						
+						<section class="post-content">
+							<%=trimHtml(slice(item.content,100))%>
+							<footer class="post-footer clearfix">
+								<%include ../item/_tag.ejs%>
+							</footer>
+						</section>
+						<div class="post-permalink text-right m-t-10">
+							<a class="btn btn-default" href="/item/<%=item._id%>">阅读全文</a>
+						</div>
+					</article>
+				</section>
+			</main>
+			<%})%>
+			
+		</div>
+	</div>
+</section>
+<%include ../layout/_script%>
+<script>
+	require(['/js/home/index.js'],function(index){});
+</script>

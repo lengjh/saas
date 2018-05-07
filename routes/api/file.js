@@ -8,7 +8,7 @@ var multer = require('multer');
 var webutils = require('webutils');
 var uploadPath = '../../../uploads/';
 
-var getFileType = function(str) {
+var getFileType = function (str) {
 	return {
 		'vnd.ms-excel': 'xls',
 		'javascript': 'js'
@@ -35,7 +35,7 @@ var upload = multer({
 	// 	console.log(1023);
 	// 	cb(null, file.fieldname + '-' + Date.now());
 	// },
-	fileFilter: function(req, file, c) {
+	fileFilter: function (req, file, c) {
 
 		var mimetype = file.mimetype;
 
@@ -50,13 +50,25 @@ var upload = multer({
 var uploads = upload.any();
 
 
-router.post('/upload', function(req, res, next) {
-	uploads(req, res, function(err) {
+router.post('/upload', function (req, res, next) {
+	var data = '';
+	// console.log(data);
+	// req.on('data', function (chunk) {
+	// 	console.log(chunk);
+	// 	data += chunk;
+
+	// });
+	// req.on('end', function () {
+	// 	console.log(data);
+	// 	res.send(data);
+	// });
+	//return;
+	uploads(req, res, function (err) {
 		if (err) {
 			webutils.error(err);
 			res.send(err);
 		} else {
-			var obj = req.files.map(function(item) {
+			var obj = req.files.map(function (item) {
 				webutils.info(item);
 				delete item.destination;
 				delete item.path;
@@ -68,10 +80,11 @@ router.post('/upload', function(req, res, next) {
 					getFileType(item.mimetype.split('/')[1]);
 				return item;
 			});
+			webutils.info('req.files', req.files, obj);
 			if (req.query && req.query.dir === 'image') {
 				res.send({
 					error: 0,
-					url: obj[0].url
+					url: obj[0] ? obj[0].url : ''
 				});
 			} else {
 				res.send(obj);
@@ -83,14 +96,14 @@ router.post('/upload', function(req, res, next) {
 
 
 
-router.get('/:filename', function(req, res, next) {
+router.get('/:filename', function (req, res, next) {
 	var id = req.params.filename;
 	var realPath = path.join(__dirname, uploadPath + id);
 	var _mime = mime.lookup(realPath);
 	var lastIndexOf = realPath.lastIndexOf('.');
 	realPath = realPath.slice(0, lastIndexOf);
 
-	fs.stat(realPath, function(err, stat) {
+	fs.stat(realPath, function (err, stat) {
 		if (err) {
 			webutils.error(err);
 			next();

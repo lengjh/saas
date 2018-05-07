@@ -6,11 +6,27 @@
 			<li><a href="#nav/addNews" data-nav="addNews">add1</a></li>
 			<li><a href="#nav/editNews" data-nav="editNews">add1</a></li>
 			<li><a href="#nav/addBanner" data-nav="addBanner">add1</a></li>
-			<li><a href="#nav/editBanner" data-nav="editBanner">add1</a></li>
 			<li><a href="#nav/addTag" data-nav="addTag">add1</a></li>
-			<li><a href="#nav/editTag" data-nav="editTag">add1</a></li>
 		</ul>
 	</div>
+	<style>
+	.emp-table{
+		width: 100%;
+		text-align: center;
+	}
+	.emp-table tr{
+		height: 30px;
+	}
+	.emp-table td .edit{
+		display: none;
+	}
+	.emp-table td.editing .edit{
+		display: block;
+	}
+	.emp-table td.editing .display{
+		display: none;
+	}
+	</style>
 	<div class="admin-body">
 		<div class="admin-main">
 			<h1 id="title"></h1>
@@ -27,20 +43,101 @@
 							<td>Edit</td>
 						</tr>
 					</thead>
-					<tbody id="editProduct"></tbody>
-				</table>
-			</div>
-			<div class="admin-body-item" data-nav="addNews">
-				<div id="addNews"></div>
-			</div>
-			<div class="admin-body-item" data-nav="editNews">editNews</div>
-			<div class="admin-body-item" data-nav="addBanner">addBanner</div>
-			<div class="admin-body-item" data-nav="editBanner">editBanner</div>
-			<div class="admin-body-item" data-nav="addTag">addTag</div>
-			<div class="admin-body-item" data-nav="editTag">editTag</div>
+				<tbody id="editProduct"></tbody>
+			</table>
 		</div>
-		
+		<div class="admin-body-item" data-nav="addNews">
+			<div id="addNews"></div>
+		</div>
+		<div class="admin-body-item" data-nav="editNews">
+			<div id="addNews">
+				<div class="m-t-20">
+					<button class="btn-1 add-html">ADD</button>
+				</div>
+				<div id="addnews-add"></div>
+				<div class="table-box m-t-20">
+					<table class="table  emp-table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>名称</th>
+								<th>内容</th>
+								<th>缩略图</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="addNewsTbody">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="admin-body-item" data-nav="addBanner">
+			
+			<div id="addBanner" class="m-t-20">
+				<div class="">
+					<button class="add-html">Add</button>
+				</div>
+				<div id="addBanner-add">
+				</div>
+				<div class="table-box m-t-20">
+					<table class="table emp-table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>链接</th>
+								<th>图片</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="addBannerTbody">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="admin-body-item" data-nav="addTag">
+			<div id="addTag">
+				<div class="table-box">
+					<table class="table" id="addTab-add">
+						<thead>
+							<tr>
+								<th>
+									<div class="form-item">
+										<input class="form-input" type="text" name="name" placeholder="名称">
+									</div>
+								</th>
+								<th>
+									<div class="form-item">
+										<input class="form-input" type="text" name="link" placeholder="链接">
+									</div>
+								</th>
+								<th><button class="add">ADD</button></th>
+							</tr>
+						</thead>
+					</table>
+					
+				</div>
+				<div class="table-box m-t-20">
+					<table class="table  emp-table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>名称</th>
+								<th>链接</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody id="tagTbody">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="admin-body-item" data-nav="editTag">editTag</div>
 	</div>
 </div>
-<%include ../_script%>
+</div>
+<%include ../layout/_script%>
 <script src="/js/admin/index.js"></script>

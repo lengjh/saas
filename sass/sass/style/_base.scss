@@ -39,6 +39,10 @@ $responsives:320px,360px, 375px, 384px, 393px,414px, 480px,540, 640px,720px,750p
  @return #{$values / 100}rem;
 }
 
+@function em($values){
+ @return #{$values / 100}em;
+}
+
 
 // html{
 //   font-size: 62.5px !important;

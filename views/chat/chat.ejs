@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/chat/chat.css">
+<div id="appChat" style="height:100%">
+	<div class="chat-page">
+		<div class="chat-layout">
+			<div class="chat-layout-header">
+				<span><%=id%></span>
+			</div>
+			<div class="chat-layout-body">
+				<div class="layout-a">
+					<div class="layout-left">
+						<div class="chat-container">
+							<div class="chat-header">
+								<div id="numUser" class="num-user">
+									<span id="currentNum"></span>
+									<span id="allNum"></span>
+								</div>
+							</div>
+							<div id="chatBody" class="chat-body">
+								<div class="chat-box">
+									<div class="chat-content">
+										<ul class="pages">
+											<li class="chat page">
+												<div class="chatArea">
+												<ul id="messagesContent" class="messages"></ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="chat-button">
+							<!--textarea.inputMessage(name="", cols="30", rows="10")-->
+							<input placeholder="Type here..." class="inputMessage">
+							<button class="send-message">发送</button>
+						</div>
+					</div>
+				</div>
+				<div class="layout-right">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<%include ../layout/_script%>
+<script> 
+var roomId = '<%=id%>' ;
+var user = <%-JSON.parse(user)%>|| {};
+ </script>
+<script>
+	require(['/js/chat/chat.js'],function(index){});
+</script>

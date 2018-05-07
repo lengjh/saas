@@ -1,0 +1,41 @@
+.product-list {
+	@extend .clearfix;
+	$width: 200px;
+
+	.product-item {
+		margin: 20px 0;
+		padding: 10px 0;
+		border-bottom: 1px solid #ccc;
+		@extend .clearfix;
+	}
+
+	.product-img {
+		float: left;
+		width: $width;
+	}
+
+	.product-body {
+		margin-left: $width + 20;
+	}
+
+	.product-title {
+	}
+
+	.product-des {
+		margin-top: 20px;
+	}
+	.product-date{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+}
+
+.product-title {
+	font-size: 18px;
+}
+
+.product-body {
+	margin-top: 20px;
+}

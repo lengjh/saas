@@ -16,68 +16,327 @@ a img { border: none; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
 
-/** 功能：根据不同的屏幕宽度生成html的font-size配合rem来做适配  */
-/* 媒体查询 */
-@media only screen and (min-width: 320px) { html { font-size: 42.66667px !important; }
-  body { font-size: 10.24px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 320px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 320px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 360px) { html { font-size: 48px !important; }
-  body { font-size: 11.52px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 360px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 360px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 375px) { html { font-size: 50px !important; }
-  body { font-size: 12px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 375px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 375px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 384px) { html { font-size: 51.2px !important; }
-  body { font-size: 12.288px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 384px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 384px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 393px) { html { font-size: 52.4px !important; }
-  body { font-size: 12.576px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 393px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 393px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 414px) { html { font-size: 55.2px !important; }
-  body { font-size: 13.248px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 414px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 414px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 480px) { html { font-size: 64px !important; }
-  body { font-size: 15.36px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 480px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 480px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 540) { html { font-size: 72 !important; }
-  body { font-size: 17.28 !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 540) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 540) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 640px) { html { font-size: 85.33333px !important; }
-  body { font-size: 20.48px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 640px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 640px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 720px) { html { font-size: 96px !important; }
-  body { font-size: 23.04px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 720px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 720px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
-@media only screen and (min-width: 750px) { html { font-size: 100px !important; }
-  body { font-size: 24px !important; } }
- /* @if $responsive==320px { /!* @media only screen and (min-width: 750px) { html { font-size:50px !important;}
- body { font-size: 12px !important;}
- }*!/ }@else { @media only screen and (min-width: 750px) { html{ @include fz($responsive);} body { font-size: ($responsive * $base-fonts-default / $max-container)*0.24 !important;} } }*/
+/*
+** ========== 宽度 ==========
+*/
+.w-p-0 { width: 0%; }
+
+.w-p-1 { width: 1%; }
+
+.w-p-2 { width: 2%; }
+
+.w-p-3 { width: 3%; }
+
+.w-p-4 { width: 4%; }
+
+.w-p-5 { width: 5%; }
+
+.w-p-6 { width: 6%; }
+
+.w-p-7 { width: 7%; }
+
+.w-p-8 { width: 8%; }
+
+.w-p-9 { width: 9%; }
+
+.w-p-10 { width: 10%; }
+
+.w-p-11 { width: 11%; }
+
+.w-p-12 { width: 12%; }
+
+.w-p-13 { width: 13%; }
+
+.w-p-14 { width: 14%; }
+
+.w-p-15 { width: 15%; }
+
+.w-p-16 { width: 16%; }
+
+.w-p-17 { width: 17%; }
+
+.w-p-18 { width: 18%; }
+
+.w-p-19 { width: 19%; }
+
+.w-p-20 { width: 20%; }
+
+.w-p-21 { width: 21%; }
+
+.w-p-22 { width: 22%; }
+
+.w-p-23 { width: 23%; }
+
+.w-p-24 { width: 24%; }
+
+.w-p-25 { width: 25%; }
+
+.w-p-26 { width: 26%; }
+
+.w-p-27 { width: 27%; }
+
+.w-p-28 { width: 28%; }
+
+.w-p-29 { width: 29%; }
+
+.w-p-30 { width: 30%; }
+
+.w-p-31 { width: 31%; }
+
+.w-p-32 { width: 32%; }
+
+.w-p-33 { width: 33%; }
+
+.w-p-34 { width: 34%; }
+
+.w-p-35 { width: 35%; }
+
+.w-p-36 { width: 36%; }
+
+.w-p-37 { width: 37%; }
+
+.w-p-38 { width: 38%; }
+
+.w-p-39 { width: 39%; }
+
+.w-p-40 { width: 40%; }
+
+.w-p-41 { width: 41%; }
+
+.w-p-42 { width: 42%; }
+
+.w-p-43 { width: 43%; }
+
+.w-p-44 { width: 44%; }
+
+.w-p-45 { width: 45%; }
+
+.w-p-46 { width: 46%; }
+
+.w-p-47 { width: 47%; }
+
+.w-p-48 { width: 48%; }
+
+.w-p-49 { width: 49%; }
+
+.w-p-50 { width: 50%; }
+
+.w-p-51 { width: 51%; }
+
+.w-p-52 { width: 52%; }
+
+.w-p-53 { width: 53%; }
+
+.w-p-54 { width: 54%; }
+
+.w-p-55 { width: 55%; }
+
+.w-p-56 { width: 56%; }
+
+.w-p-57 { width: 57%; }
+
+.w-p-58 { width: 58%; }
+
+.w-p-59 { width: 59%; }
+
+.w-p-60 { width: 60%; }
+
+.w-p-61 { width: 61%; }
+
+.w-p-62 { width: 62%; }
+
+.w-p-63 { width: 63%; }
+
+.w-p-64 { width: 64%; }
+
+.w-p-65 { width: 65%; }
+
+.w-p-66 { width: 66%; }
+
+.w-p-67 { width: 67%; }
+
+.w-p-68 { width: 68%; }
+
+.w-p-69 { width: 69%; }
+
+.w-p-70 { width: 70%; }
+
+.w-p-71 { width: 71%; }
+
+.w-p-72 { width: 72%; }
+
+.w-p-73 { width: 73%; }
+
+.w-p-74 { width: 74%; }
+
+.w-p-75 { width: 75%; }
+
+.w-p-76 { width: 76%; }
+
+.w-p-77 { width: 77%; }
+
+.w-p-78 { width: 78%; }
+
+.w-p-79 { width: 79%; }
+
+.w-p-80 { width: 80%; }
+
+.w-p-81 { width: 81%; }
+
+.w-p-82 { width: 82%; }
+
+.w-p-83 { width: 83%; }
+
+.w-p-84 { width: 84%; }
+
+.w-p-85 { width: 85%; }
+
+.w-p-86 { width: 86%; }
+
+.w-p-87 { width: 87%; }
+
+.w-p-88 { width: 88%; }
+
+.w-p-89 { width: 89%; }
+
+.w-p-90 { width: 90%; }
+
+.w-p-91 { width: 91%; }
+
+.w-p-92 { width: 92%; }
+
+.w-p-93 { width: 93%; }
+
+.w-p-94 { width: 94%; }
+
+.w-p-95 { width: 95%; }
+
+.w-p-96 { width: 96%; }
+
+.w-p-97 { width: 97%; }
+
+.w-p-98 { width: 98%; }
+
+.w-p-99 { width: 99%; }
+
+.w-p-100 { width: 100%; }
+
+.table { table-layout: fixed; width: 100%; }
+.table th { color: #333; }
+.table td { color: #666; }
+.table tr:nth-child(even) { background-color: #fafafa; }
+.table tr:hover { background-color: #f2f2f2; }
+.table td, .table th { padding: rem(10); word-break: break-all; line-height: 1.2; font-size: rem(12); }
+
+.table-1 th { background-color: #f0f3f5; text-align: center; font-weight: bold; border-bottom-width: 2px; }
+.table-1 td, .table-1 th { border: 1px solid #e2e7eb; }
+
+/*
+** ========== Padding Margin ==========
+*/
+.m-t-0 { margin-top: 0px; }
+
+.m-r-0 { margin-right: 0px; }
+
+.m-b-0 { margin-bottom: 0px; }
+
+.m-l-0 { margin-left: 0px; }
+
+.p-t-0 { padding-top: 0px; }
+
+.p-r-0 { padding-right: 0px; }
+
+.p-b-0 { padding-bottom: 0px; }
+
+.p-l-0 { padding-left: 0px; }
+
+.m-t-5 { margin-top: 5px; }
+
+.m-r-5 { margin-right: 5px; }
+
+.m-b-5 { margin-bottom: 5px; }
+
+.m-l-5 { margin-left: 5px; }
+
+.p-t-5 { padding-top: 5px; }
+
+.p-r-5 { padding-right: 5px; }
+
+.p-b-5 { padding-bottom: 5px; }
+
+.p-l-5 { padding-left: 5px; }
+
+.m-t-10 { margin-top: 10px; }
+
+.m-r-10 { margin-right: 10px; }
+
+.m-b-10 { margin-bottom: 10px; }
+
+.m-l-10 { margin-left: 10px; }
+
+.p-t-10 { padding-top: 10px; }
+
+.p-r-10 { padding-right: 10px; }
+
+.p-b-10 { padding-bottom: 10px; }
+
+.p-l-10 { padding-left: 10px; }
+
+.m-t-15 { margin-top: 15px; }
+
+.m-r-15 { margin-right: 15px; }
+
+.m-b-15 { margin-bottom: 15px; }
+
+.m-l-15 { margin-left: 15px; }
+
+.p-t-15 { padding-top: 15px; }
+
+.p-r-15 { padding-right: 15px; }
+
+.p-b-15 { padding-bottom: 15px; }
+
+.p-l-15 { padding-left: 15px; }
+
+.m-t-20 { margin-top: 20px; }
+
+.m-r-20 { margin-right: 20px; }
+
+.m-b-20 { margin-bottom: 20px; }
+
+.m-l-20 { margin-left: 20px; }
+
+.p-t-20 { padding-top: 20px; }
+
+.p-r-20 { padding-right: 20px; }
+
+.p-b-20 { padding-bottom: 20px; }
+
+.p-l-20 { padding-left: 20px; }
+
+.m-t-25 { margin-top: 25px; }
+
+.m-r-25 { margin-right: 25px; }
+
+.m-b-25 { margin-bottom: 25px; }
+
+.m-l-25 { margin-left: 25px; }
+
+.p-t-25 { padding-top: 25px; }
+
+.p-r-25 { padding-right: 25px; }
+
+.p-b-25 { padding-bottom: 25px; }
+
+.p-l-25 { padding-left: 25px; }
+
 html, body { width: 100%; height: 100%; }
 
 body { line-height: 1.2; }
 
 * { box-sizing: border-box; }
+
+img { border: none; max-width: 100%; }
 
 /*
 ** ========== 浮动 ==========
@@ -131,25 +390,25 @@ body { line-height: 1.2; }
 
 html, body { height: 100%; overflow: hidden; background-color: #dce8d7; }
 
-.chat-page { width: 100%; height: 100%; margin: 0 auto; font-size: 0.14rem; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+.chat-page { width: 100%; height: 100%; margin: 0 auto; font-size: rem(14); box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
 .chat-layout { height: 100%; background-color: #333; display: -moz-box; -moz-box-orient: vertical; display: -webkit-box; -webkit-box-orient: vertical; }
-.chat-layout .chat-layout-header { padding: 0.15rem; font-size: 0.14rem; color: #fff; }
+.chat-layout .chat-layout-header { padding: rem(15); font-size: rem(14); color: #fff; }
 .chat-layout .chat-layout-body { position: relative; -moz-box-flex: 1; -webkit-box-flex: 1; }
 
 .layout-a { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: -moz-box; display: -webkit-box; }
 .layout-a > div { height: 100%; }
 .layout-a .layout-left { background-color: #fafafa; -moz-box-flex: 2; -webkit-box-flex: 2; }
-.layout-a .layout-right { width: 2rem; color: #fff; background-color: #eee; }
+.layout-a .layout-right { width: rem(200); color: #fff; background-color: #eee; }
 
-.chat-content { margin: 0.1rem; }
+.chat-content { margin: rem(10); }
 
 .chat-container { height: 100%; display: -moz-box; -moz-box-orient: vertical; display: -webkit-box; -webkit-box-orient: vertical; }
-.chat-container .chat-header { height: 0.5rem; line-height: 0.5rem; background-color: #f8f8f8; border-bottom: 1px solid #f2f2f2; }
+.chat-container .chat-header { height: rem(50); line-height: rem(50); background-color: #f8f8f8; border-bottom: 1px solid #f2f2f2; }
 .chat-container .chat-body { -moz-box-flex: 1; -webkit-box-flex: 1; overflow: auto; }
 .chat-container .chat-button { display: -moz-box; display: -webkit-box; border-top: 1px solid #f2f2f2; }
-.chat-container .chat-button button, .chat-container .chat-button input, .chat-container .chat-button textarea { height: 0.4rem; padding: 0.1rem; margin: 0; outline: none; border: none; resize: none; }
-.chat-container .chat-button button { width: 1rem; display: block; cursor: pointer; background-color: #333; color: #fff; }
+.chat-container .chat-button button, .chat-container .chat-button input, .chat-container .chat-button textarea { height: rem(40); padding: rem(10); margin: 0; outline: none; border: none; resize: none; }
+.chat-container .chat-button button { width: rem(100); display: block; cursor: pointer; background-color: #333; color: #fff; }
 .chat-container .chat-button textarea, .chat-container .chat-button input { display: block; -moz-box-flex: 1; -webkit-box-flex: 1; }
 
 .num-user { text-align: center; }
@@ -157,21 +416,21 @@ html, body { height: 100%; overflow: hidden; background-color: #dce8d7; }
 .num-user em { color: green; }
 .num-user i { color: red; font-weight: bold; }
 
-.message-item { margin: 0.2rem 0; }
+.message-item { margin: rem(20) 0; }
 
-.message-item-box { margin-left: 0.7rem; }
+.message-item-box { margin-left: rem(70); }
 
-.message-body { float: left; max-width: 95%; background-color: #62BF6E; padding: 0.1rem 0.2rem; border-radius: 0.03rem; color: #fff; word-break: break-all; line-height: 0.18rem; }
+.message-body { float: left; max-width: 95%; background-color: #62BF6E; padding: rem(10) rem(20); border-radius: rem(3); color: #fff; word-break: break-all; line-height: rem(18); }
 
-.username { color: #999; margin-bottom: 0.1rem; }
+.username { color: #999; margin-bottom: rem(10); }
 
-.user-img { width: 0.5rem; height: 0.5rem; float: left; background: #eee url(img/user.png) no-repeat center center; border-radius: 50%; }
+.user-img { width: rem(50); height: rem(50); float: left; background: #eee url(img/user.png) no-repeat center center; border-radius: 50%; }
 
-.message-time { color: #aaa; margin-left: 0.1rem; }
+.message-time { color: #aaa; margin-left: rem(10); }
 
-.log { color: #aaa; text-align: center; margin: 0.1rem 0; }
+.log { color: #aaa; text-align: center; margin: rem(10) 0; }
 
 .my-message .message-body { float: right; background-color: #7BC4EF; }
 .my-message .user-img { float: right; }
 .my-message .username { text-align: right; }
-.my-message .message-item-box { margin-right: 0.7rem; }
+.my-message .message-item-box { margin-right: rem(70); }

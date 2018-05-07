@@ -1,0 +1,13 @@
+@import 'variable';
+@import 'global';
+@import 'layout';
+@import 'mixin';
+@import 'product-list';
+@import 'nav';
+@import 'home';
+@import 'article';
+
+.banner-box {
+	position: relative;
+	//background-color: #25C286;
+}

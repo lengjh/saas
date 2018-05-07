@@ -1,0 +1,24 @@
+<div class="content-wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 main-content">
+				<div class="item-box">
+					<section class="content-wrap section-main p-30">
+						<h2><%=item.title||item.name%></h2>
+						<%include _item-info.ejs%>
+						<div class="block-margin-1">
+							<%-item.content%>
+						</div>
+						<footer class="post-footer clearfix">
+							<%include _tag.ejs%>
+						</footer>
+					</section>
+				</div>
+			</div>
+			<div class="col-md-4 sidebar">
+				<%include _sidebar.ejs%>
+			</div>
+		</div>
+	</div>
+</div>
+<%include ../layout/_script%>

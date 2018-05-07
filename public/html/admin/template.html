@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Template page</title>
+		<!-- 通用样式Start -->
+		<link rel="stylesheet" href="/style/admin/global.css">
+		<style>
+			tfoot .form-input,tfoot  .form-textarea, tfoot .save-item{
+				display: none;
+			}
+			tfoot  .editing .form-input,tfoot  .editing .form-textarea{
+				display: inline-block;
+			}
+			tfoot  .editing .save-item{
+				display: inline-block;
+			}
+			tfoot  .editing .display{
+				display: none !important;
+			}
+			tfoot  .editing .edit-item {
+				display: none;
+			}
+			.table .ke-container{
+				width: 100% !important;
+			}
+			tfoot .webuploader-file ,tfoot .webuploader-file-list{
+				display: none;
+			}
+			tfoot .editing .webuploader-file ,tfoot .editing .webuploader-file-list{
+				display: block;
+			}
+			.tab-content{
+				display: none;
+			}
+		</style>
+		<!-- 通用样式End -->
+	</head>
+	<body class="page">
+		
+		<div class="section-1 p-20">
+			<h1 class="title-1">Template page</h1>
+		</div>
+		<div class="  block-margin">
+			<div class="tab-wrap">
+				<div class="tab-header">
+					<div class="tab-item" data-tab="1">Tab1 news</div>
+					<div class="tab-item" data-tab="2">Tab2 case</div>
+					<div class="tab-item" data-tab="3">Tab3 tag</div>
+					<div class="tab-item" data-tab="4">Tab4 banner</div>
+					<div class="tab-item" data-tab="5">Tab5 follow</div>
+					<div class="tab-item" data-tab="6">Tab6 server</div>
+					<div class="tab-item" data-tab="7">Tab7 contact</div>
+					<div class="tab-item" data-tab="8">Tab8</div>
+					<div class="tab-item" data-tab="9">Tab9</div>
+				</div>
+				<div class="tab-body">
+					<div class="tab-content" data-tab="1">
+						
+					</div>
+					<div class="tab-content" data-tab="2">
+						
+					</div>
+					<div class="tab-content" data-tab="3">
+						
+					</div>
+					<div class="tab-content" data-tab="4">
+						
+					</div>
+					<div class="tab-content" data-tab="5">
+						
+					</div>
+					<div class="tab-content" data-tab="6">
+						
+					</div>
+					<div class="tab-content" data-tab="7">
+						
+					</div>
+					<div class="tab-content" data-tab="8">
+						
+					</div>
+					<div class="tab-content" data-tab="9">9</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- 业务相关代码 -->
+		<script src="/js/libs/require/2.1.11/require.js"></script>
+		<script src="/js/config/require-config.js"></script>
+		<script type="text/javascript">
+		require(['/js/admin/js/template.js'],function(){});
+		</script>
+	</body>
+</html>
